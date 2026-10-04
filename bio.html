@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Bio</title>
+  <meta name="description" content="Short personal bio of Your Name.">
+  <style>
+    :root {
+      --bg: #f2f5f3;
+      --ink: #1b2a2f;
+      --muted: #566a70;
+      --line: #cbd5d1;
+      --accent: #0f6b6b;
+      --accent-soft: #dcebe8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+    a:focus-visible, .button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .page {
+      max-width: 62rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 17rem 1fr;
+      gap: 4rem;
+    }
+
+    /* Left column: identity */
+    .identity { position: sticky; top: 3rem; align-self: start; }
+
+    .avatar {
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin: 0 0 0.5rem;
+    }
+
+    .role { margin: 0 0 1.5rem; color: var(--muted); }
+
+    .contact { list-style: none; margin: 0 0 1.75rem; padding: 0; }
+    .contact li { padding: 0.35rem 0; border-top: 1px solid var(--line); }
+    .contact li:last-child { border-bottom: 1px solid var(--line); }
+    .contact span { display: block; font-size: 0.85rem; color: var(--muted); }
+
+    .button {
+      display: inline-block;
+      background: var(--ink);
+      color: #fff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .button:hover { background: var(--accent); color: #fff; }
+
+    /* Right column: content */
+    section + section { margin-top: 3rem; }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.6rem;
+      margin: 0 0 1rem;
+    }
+
+    .about p { max-width: 38rem; margin: 0 0 1rem; }
+    .about p:first-child { font-size: 1.25rem; line-height: 1.55; }
+
+    .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tags li {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.3rem 0.85rem;
+      border-radius: 2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* Timeline: content really is a sequence */
+    .timeline { list-style: none; margin: 0; padding: 0 0 0 1.5rem; border-left: 2px solid var(--line); }
+    .timeline li { position: relative; padding-bottom: 1.75rem; }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.5rem - 7px);
+      top: 0.55rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--accent);
+    }
+    .timeline h3 { margin: 0; font-size: 1.1rem; }
+    .timeline .when { margin: 0 0 0.25rem; color: var(--muted); font-size: 0.95rem; }
+    .timeline p:last-child { margin: 0; max-width: 36rem; }
+
+    footer {
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 52rem) {
+      .page { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 2.5rem; }
+      .identity { position: static; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="identity">
+      <div class="avatar" aria-hidden="true">YN</div>
+      <h1>Your Name</h1>
+      <p class="role">Your profession or title</p>
+
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><span>Location</span>Your city, country</li>
+        <li><span>Profile</span><a href="https://example.com">example.com</a></li>
+      </ul>
+
+      <a class="button" href="mailto:you@example.com">Get in touch</a>
+    </header>
+
+    <main>
+      <section class="about" id="about">
+        <h2>About me</h2>
+        <p>Write one clear sentence here that says who you are and what you do.</p>
+        <p>Add two or three sentences about your background, what you care about, and what you are working on now.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills and interests</h2>
+        <ul class="tags">
+          <li>Skill one</li>
+          <li>Skill two</li>
+          <li>Skill three</li>
+          <li>Interest one</li>
+          <li>Interest two</li>
+        </ul>
+      </section>
+
+      <section id="journey">
+        <h2>Education and experience</h2>
+        <ol class="timeline">
+          <li>
+            <h3>Most recent role or school</h3>
+            <p class="when">2023 to present</p>
+            <p>One or two sentences on what you did or learned there.</p>
+          </li>
+          <li>
+            <h3>Previous role or school</h3>
+            <p class="when">2019 to 2023</p>
+            <p>One or two sentences on what you did or learned there.</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2026 Your Name
+    </footer>
+
+  </div>
+</body>
+</html>
